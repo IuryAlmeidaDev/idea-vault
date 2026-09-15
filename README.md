@@ -1,43 +1,45 @@
-# Website
+# 💡 Minhas Ideias de Negócio
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+> Caderno digital e vault de ideias hospedado na Vercel e versionado no GitHub.
 
-## Installation
+- 🌐 **Site no ar**: [https://minhas-ideias-nine.vercel.app](https://minhas-ideias-nine.vercel.app)
+- 🔒 **Repositório Privado**: [https://github.com/IuryAlmeidaDev/minhas-ideias](https://github.com/IuryAlmeidaDev/minhas-ideias)
 
-```bash
-npm install
+---
+
+## 📱 Como adicionar uma nova ideia pelo celular
+
+1. Abra o app do **GitHub** no celular ou acesse [github.com/IuryAlmeidaDev/minhas-ideias](https://github.com/IuryAlmeidaDev/minhas-ideias).
+2. Entre na pasta `docs/` e na pasta da categoria (ex: `docs/ecommerce/` ou crie uma nova pasta digitando `minha-categoria/nome-da-ideia.md`).
+3. Escreva o conteúdo em Markdown (você pode copiar o formato de `docs/templates/modelo-nova-ideia.md`).
+4. Clique em **Commit changes**.
+5. Em ~45 segundos, a Vercel faz o build automático e a ideia já estará visível no link do seu site.
+
+---
+
+## 🗂️ Estrutura de Pastas
+
+```text
+docs/
+├── intro.md                        # Página inicial com visão geral
+├── ecommerce/                      # Categoria E-commerce
+│   └── venda-relogios.md           # Exemplo: Loja de relógios
+├── saas/                           # Categoria SaaS / Software
+│   └── gestao-assistencia.md       # Exemplo: SaaS para assistência técnica
+└── templates/
+    └── modelo-nova-ideia.md        # Template para duplicar
 ```
 
-**Note**: feel free to use the package manager of your choice.
+Cada nova pasta ou arquivo `.md` que você colocar em `docs/` vira automaticamente uma seção e página no menu lateral.
 
-## Local Development
+---
+
+## 💻 Desenvolvimento Local
 
 ```bash
+# Rodar servidor local
 npm run start
-```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-## Build
-
-```bash
+# Gerar build estático de produção
 npm run build
 ```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-## Deployment
-
-Using SSH:
-
-```bash
-USE_SSH=true npm run deploy
-```
-
-Not using SSH:
-
-```bash
-GIT_USER=<Your GitHub username> npm run deploy
-```
-
-If you are using GitHub Pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
