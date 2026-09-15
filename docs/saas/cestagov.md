@@ -89,10 +89,10 @@ O CestaGov adota uma estratégia de duplo ICP, iniciando a tração por clientes
 | :--- | :--- | :--- |
 | **Custo Inicial de Validação (MVP)** | R$ 2.500,00 | Desenvolvimento de scripts locais, domínio .gov.br ou .com.br, template UI (Shadcn/Tailwind), infraestrutura inicial (Supabase + Render/Vercel) e verba de prospecção fria. |
 | **Custo de Operação / Unidade** | R$ 28,50 / mês | Custo por organização ativa: processamento de consultas na API do PNCP, cluster PostgreSQL/Redis gerenciado, geração de PDFs via microserviço headless (Gotenberg/Typst) e envio transacional. |
-| **Preço de Venda / Mensalidade** | **B2B**: R$ 490,00 a R$ 790,00/mês<br>**B2G**: R$ 8.400,00 a R$ 12.000,00/ano | **B2B**: Cobrança recorrente via cartão/boleto com relatórios ilimitados para múltiplos municípios clientes.<br>**B2G**: Contrato anual fechado faturado em parcela única ou semestral via empenho. |
+| **Preço de Venda / Mensalidade** | **B2B**: R$ 490,00 a R$ 790,00/mês<br/>**B2G**: R$ 8.400,00 a R$ 12.000,00/ano | **B2B**: Cobrança recorrente via cartão/boleto com relatórios ilimitados para múltiplos municípios clientes.<br/>**B2G**: Contrato anual fechado faturado em parcela única ou semestral via empenho. |
 | **Margem Bruta Alvo** | 92% | Modelo puramente digital de software em nuvem sem suporte presencial obrigatório e baixo consumo de banda. |
-| **CAC Alvo (Custo por Cliente)** | **B2B**: R$ 350,00<br>**B2G**: R$ 1.500,00 | **B2B**: Prospecção outbound consultiva e cold messaging altamente direcionado.<br>**B2G**: Apresentações online qualificadas e fornecimento prévio da minuta técnica de contratação por dispensa. |
-| **LTV Estimado (Tempo de Vida)** | **B2B**: R$ 14.700,00<br>**B2G**: R$ 36.000,00 | **B2B**: Retenção média estimada de 24 a 30 meses (churn < 3% em ferramentas operacionais de uso diário).<br>**B2G**: Contratos de dispensa/inexigibilidade renováveis anualmente por até 5 ou 10 anos (Art. 106 e 107 da Lei 14.133/2021). |
+| **CAC Alvo (Custo por Cliente)** | **B2B**: R$ 350,00<br/>**B2G**: R$ 1.500,00 | **B2B**: Prospecção outbound consultiva e cold messaging altamente direcionado.<br/>**B2G**: Apresentações online qualificadas e fornecimento prévio da minuta técnica de contratação por dispensa. |
+| **LTV Estimado (Tempo de Vida)** | **B2B**: R$ 14.700,00<br/>**B2G**: R$ 36.000,00 | **B2B**: Retenção média estimada de 24 a 30 meses (churn inferior a 3% em ferramentas operacionais de uso diário).<br/>**B2G**: Contratos de dispensa/inexigibilidade renováveis anualmente por até 5 ou 10 anos (Art. 106 e 107 da Lei 14.133/2021). |
 
 ---
 
@@ -131,7 +131,7 @@ O CestaGov adota uma estratégia de duplo ICP, iniciando a tração por clientes
 * **Componentes Principais**:
   - *Autocomplete Inteligente*: Busca preditiva de itens com classificação CatMat/CatSer e busca textual em linguagem natural.
   - *Grid Dinâmica de Propostas*: Tabela de fontes encontradas com flags automáticas (Item Homologado, Alerta de Frete, Suspeita de Inexequibilidade).
-  - *Módulo Estatístico Visual*: Exibição gráfica dos limites de corte ($Q_1 - 1.5 \times IQR$ e $Q_3 + 1.5 \times IQR$), demonstrando claramente quais valores foram expurgados e por qual motivo.
+  - *Módulo Estatístico Visual*: Exibição gráfica dos limites de corte ([Q1 - 1.5 * IQR] e [Q3 + 1.5 * IQR]), demonstrando claramente quais valores foram expurgados e por qual motivo.
   - *Painel Human-in-the-Loop*: Permite ao pregoeiro incluir ou desconsiderar propostas manualmente, exigindo registro de justificativa textual para auditoria.
 
 ### Backend, APIs & Banco de Dados
@@ -139,8 +139,8 @@ O CestaGov adota uma estratégia de duplo ICP, iniciando a tração por clientes
 * **Banco de Dados Principal**: PostgreSQL 16 com extensão `pgvector` para busca por similaridade semântica em especificações técnicas de editais.
 * **Camada de Cache**: Redis 7 com estratégia de cache de consultas externas do PNCP (TTL de 24h), mitigando rate limits e garantindo tempo de resposta sub-segundo.
 * **Motor Estatístico**: Implementação robusta dos critérios da IN 65/2021:
-  - *Expurgo por IQR (Boxplot)*: Descarte de preços fora do intervalo $[Q_1 - 1.5 \times IQR, Q_3 + 1.5 \times IQR]$.
-  - *Análise de Dispersão*: Cálculo do Coeficiente de Variação ($CV = \frac{\sigma}{\mu} \times 100$). Se $CV > 25\%$, o sistema recomenda automaticamente o uso da mediana em vez da média, conforme jurisprudência do TCU (Acórdão 2.637/2015-Plenário).
+  - *Expurgo por IQR (Boxplot)*: Descarte de preços fora do intervalo `[Q1 - 1.5 * IQR, Q3 + 1.5 * IQR]`.
+  - *Análise de Dispersão*: Cálculo do Coeficiente de Variação `CV = (desvio_padrao / media) * 100`. Se o CV for superior a 25%, o sistema recomenda automaticamente o uso da mediana em vez da média, conforme jurisprudência do TCU (Acórdão 2.637/2015-Plenário).
 
 ### Integrações Chave
 * **API do PNCP**: Coleta de contratações homologadas, atas de registro de preços e editais oficiais dos últimos 12 meses.
