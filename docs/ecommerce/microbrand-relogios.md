@@ -77,7 +77,7 @@ A precificação foi ajustada para R$ 749,00 para suportar a nova tributação d
 | Gateway de Pagamento & Antecipação D+2 | -R$ 52,43 | 7,0% | Mercado Pago / Appmax considerando cartão em até 6x. |
 | Frete Médio Nacional com Seguro | -R$ 35,00 | 4,7% | Correios PAC / Jadlog via Melhor Envio com seguro total. |
 | **Receita Líquida Operacional** | **R$ 624,12** | **83,3%** | Caixa disponível após deduções fiscais e de pagamento. |
-| Custo do Relógio Desembarcado (FOB + Frete + Impostos) | -R$ 345,00 | 46,1% | US$ 42 FOB + US$ 6 frete = R$ 240 + ~44% tributação (< US$ 50). |
+| Custo do Relógio Desembarcado (FOB + Frete + Impostos) | -R$ 345,00 | 46,1% | US$ 42 FOB + US$ 6 frete = R$ 240 + ~44% tributação (abaixo de US$ 50). |
 | Pulseira de Couro Legítimo Crazy Horse (Nacional) | -R$ 28,00 | 3,7% | Substituição obrigatória da pulseira rígida de fábrica. |
 | Kit Embalagem (Caixa Rígida + Flanela + Certificado) | -R$ 35,00 | 4,7% | Estojo rígido estruturado de alto padrão de unboxing. |
 | **Margem de Contribuição 1 (Antes do Tráfego)** | **R$ 216,12** | **28,8%** | Margem disponível para cobrir marketing e gerar lucro. |
